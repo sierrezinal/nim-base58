@@ -8,10 +8,10 @@ jobs:
       - checkout
       - run:
           name: install bigints
-          command: /nim-0.19.0/bin/nimble install bigints
+          command: PATH=/nim-0.19.0/bin:$PATH nimble -y install bigints
       - run:
           name: build and test
-          command: /nim-0.19.0/bin/nim c -r src/base58.nim
+          command: PATH=/nim-0.19.0/bin:$PATH nim c -r src/base58.nim
 
 workflows:
   version: 2
